@@ -228,7 +228,7 @@ print("Saved: output.mp4")
 ### Recommended inference settings (baseline)
 
 * `imgsz=832` improves small-head detection (slower than the default 640)
-* `conf=0.25`, `iou=0.75`, `max_det=300` were used for the best validation/test counting behavior
+* `conf=0.4`, `iou=0.75`, `max_det=300` were used for the best counting behavior on unseen data
 
 ---
 
