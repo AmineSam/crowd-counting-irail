@@ -3,9 +3,11 @@
 ## Project goal
 Build a computer-vision component that estimates **crowd occupancy** by detecting **heads** in station-like scenes.
 
-This is an add-on to the [iRail Azure project](http://ped.fz-juelich.de/da/2024rpee_heads): iRail does not provide station occupancy, so we approximate it from camera frames (or public station videos) using deep learning.
+This is an add-on to the [iRail Azure project](https://github.com/AmineSam/challenge-azure): iRail does not provide station occupancy, so we approximate it from camera frames (or public station videos) using deep learning.
 
 [Demo](https://huggingface.co/spaces/AmineSam/irail-crowd-counting-yolov8n-demo) 
+<img width="2383" height="1181" alt="web_app" src="https://github.com/user-attachments/assets/e6ff3be0-684a-43a5-a4a3-60a3ec21aebe" />
+
 
 ## Dataset
 **RPEE-Heads** (Railway Platforms and Event Entrances-Heads)
@@ -100,7 +102,10 @@ Using `conf=0.25`, `iou=0.70`, `imgsz=832`, `max_det=300`:
 
 Bucket analysis shows errors increase with higher crowd density (101-200 heads is the hardest).
 
-insert images here
+<img width="572" height="454" alt="scatter_test" src="https://github.com/user-attachments/assets/b9ee503e-d385-420b-a084-461fdced4bf0" />
+
+
+<img width="563" height="454" alt="error_hist_test" src="https://github.com/user-attachments/assets/a9d5d048-7763-4f7e-bcfd-476b908ebea5" />
 
 ## Tune conf and IoU for best bias and MAE
 
@@ -223,7 +228,7 @@ print("Saved: output.mp4")
 ### Recommended inference settings (baseline)
 
 * `imgsz=832` improves small-head detection (slower than the default 640)
-* `conf=0.25`, `iou=0.70`, `max_det=300` were used for your best validation/test counting behavior
+* `conf=0.25`, `iou=0.75`, `max_det=300` were used for the best validation/test counting behavior
 
 ---
 
@@ -239,9 +244,9 @@ print("Saved: output.mp4")
    * An output image with bounding boxes
    * Predicted head count
    * A simple occupancy bucket (Low / Medium / High)
-   * You can play with the Confidence adn the IoU to see the effect on counting
+   * You can adjust the Confidence and the IoU to see the effect on counting
 
-### Option B: Duplicate the Space to your account (recommended)
+### Option B: Duplicate the Space to your account 
 
 1. Click **Duplicate Space** on Hugging Face.
 2. Choose a name under your account.
@@ -274,7 +279,7 @@ python app.py
 
 ## Contact / Context
 
-This dataset is part of a ** BeCode Bootcamp** 
+This dataset is part of a BeCode Bootcamp
 
 For questions, reuse, or collaboration, feel free to reach out.
 
@@ -283,6 +288,6 @@ For questions, reuse, or collaboration, feel free to reach out.
 ## 👤 Author
 
 **Amine Samoudi**
-- GitHub: [@AmineSam](https://github.com/AmineSam)
+- Linkedin: [@AmineSam](https://www.linkedin.com/in/samoudi/)
 
 ---
